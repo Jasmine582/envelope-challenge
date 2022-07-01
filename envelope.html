@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Envelope Challenge</title>
     <style>
       *{
         font-family: sans-serif;
@@ -52,9 +52,18 @@
       <div class="container">
         <h1>Envelope Challenge</h1>
         <span id="number">0</span>
-        <button id="generateBtn">Generate</button>
+        <button id="generateBtn" onclick="toggle()">Click Here</button>
       </div>
       <script>
+          function toggle(){
+            const x = document.getElementById('number');
+            if(x.style.display === "none"){
+              x.style.display = "block";
+            }
+            else {
+              x.style.display = "none";
+            }
+          };
           const number = document.getElementById('number');
           const generateBtn = document.getElementById('generateBtn');
           const randomNumberGenerator = () => {
@@ -62,7 +71,7 @@
           number.textContent = random;
           };
         generateBtn.addEventListener('click', randomNumberGenerator);
-      randomNumberGenerator();
+        toggle(randomNumberGenerator());
       </script>
     </body>
 </html>
