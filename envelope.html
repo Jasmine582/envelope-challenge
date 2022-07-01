@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        font-family: sans-serif;
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+      }
+      body{
+        background-color: #eee;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow:column wrap;
+      }
+      .container{
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        border: 0.1rem solid #000;
+      }
+      .container h1 {
+        margin-bottom: 1rem;
+      }
+      .container span{
+        display: block;
+        margin-bottom: 1rem;
+        font-size: 8rem;
+        color: orangered;
+      }
+      .container button{
+        outline: none;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.5rem;
+        border-radius: 1rem;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <h1>Envelope Challenge</h1>
+        <span id="number">0</span>
+        <button id="generateBtn">Generate</button>
+      </div>
+      <script>
+          const number = document.getElementById('number');
+          const generateBtn = document.getElementById('generateBtn');
+          const randomNumberGenerator = () => {
+          const random = Math.floor(Math.random() *100 )+1;
+          number.textContent = random;
+          };
+        generateBtn.addEventListener('click', randomNumberGenerator);
+      randomNumberGenerator();
+      </script>
+    </body>
+</html>
